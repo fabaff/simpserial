@@ -1,0 +1,56 @@
+.TH "simpserial" "1" "0.0.1" "Fabian Affolter" "GTK tool"
+.SH "NAME"
+.LP 
+simpserial \- A very simple tool to get data from serial ports
+.SH "SYNTAX"
+.LP 
+myprogram [\fIoption\fP] <\fIfilename\fP>
+.br 
+myprogram \fI\-dscan\fP <\fIdirectory\fP>
+.SH "DESCRIPTION"
+.LP 
+Simply display all information that comes from a serial port.  It's only a small GTK based application that gets the data from the serial port and print those information in a box.
+
+This is no serial terminal, only a show case for pyserial.
+.SH "OPTIONS"
+.LP 
+.TP 
+\fB\-dscan\fR <\fIdirectory\fP>
+Scans specified <\fIdirectory\fP>.
+.TP 
+\fB\-\-help\fR
+Output help information and exit.
+.TP 
+\fB\-\-version\fR
+Output version information and exit.
+.SH "FILES"
+.LP 
+\fI/etc/myprogram\fP 
+.br 
+\fI/var/log\fP 
+.SH "ENVIRONMENT VARIABLES"
+.LP 
+.TP 
+\fBHOME\fP
+Specifies the home directory
+.TP 
+\fBLOGINNAME\fP
+Specifies the user's login name
+.TP 
+\fBPRINTER\fP
+Specifies the printer
+.SH "EXAMPLES"
+.LP 
+To run this program the standard way type:
+.LP 
+myprogram /tmp/myfile
+.LP 
+Alternativly you can run it as:
+.LP 
+myprogram \-dscan /tmp
+.SH "AUTHORS"
+.LP 
+Fabian Affolter <fabian@bernewireless.net>
+.SH "SEE ALSO"
+.LP 
+minicom(2) mynextprogram(2)
