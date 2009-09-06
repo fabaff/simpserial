@@ -5,14 +5,12 @@ Simply display all information that comes from a serial port.  It's
 only a small GTK based application that gets the data from the serial
 port and print those information in a box.
 
-This is no serial terminal, only a show case for pyserial.  
-
+This is not a serial terminal, only a show case for pyserial.
 
 Goals
 -----
 
 * No commandline for normal users to do that.
-
 
 Requirements
 ------------

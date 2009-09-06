@@ -57,53 +57,9 @@ class simpserial:
                 "on_export_activate" :                     self.on_export_activate, 
                 "on_cut_activate" :                        self.on_cut_activate, 
                 "on_copy_activate" :                       self.on_copy_activate, 
-                "on_paste_activate" :                      self.on_paste_activate, 
-                "on_preferences_activate" :                self.on_preferences_activate, 
-                "on_information_activate" :                self.on_information_activate, 
-                "on_about_activate" :                      self.on_about_activate, 
-                "on_key_press" :                           self.on_key_press, 
-                "on_button_clear_clicked" :                self.on_button_clear_clicked, 
-                "on_button_send_clicked" :                 self.on_button_send_clicked, 
-                "on_button_addressbook_toggled" :          self.on_button_addressbook_toggled, 
-                "on_button_add_addressbook_clicked":       self.on_button_add_addressbook_clicked, 
-                "on_button_delete_addressbook_clicked":    self.on_button_delete_addressbook_clicked, 
-                "on_treeview_addressbook_row_activated" :  self.on_addressbook_row_activated     
+                "on_paste_activate" :                      self.on_paste_activate,      
               }
         self.wTree.signal_autoconnect( dic )
-
-        ## Check the user directory
-        #if not os.path.isdir( conf_dir ):
-            #os.mkdir( conf_dir )
-        
-        # Read the settings
-        settings.read( settingsfile )
-        
-        # If the config file is non-existent, ConfigParser.read() simply
-        # ignores it. So let's check if it has or sections or not
-        if  settings.sections() == []:
-            settings.add_section( 'Application' )
-            settings.set( 'Application', 'last used', '0' )
-            settings.set( 'Application', 'user number', '')
-            settings.add_section( 'Providers' )
-            settings.set( 'Providers', 'orange', ',' )
-            settings.set( 'Providers', 'swisscom', ',' )
-            settings.set( 'Providers', 'eth', ',' )
-            settings.set( 'Providers', 'schoolnet', ',' )
-
-        # Connect to widgets
-        self.main_window = self.wTree.get_widget( "mainWindow" )
-        self.msg = self.wTree.get_widget( "textview_message" )
-        self.msgbuffer = self.msg.get_buffer()
-        self.num_chars = self.wTree.get_widget( "label_numchars" )
-        self.num_sms = self.wTree.get_widget( "label_numsms" )
-        self.statusbar = self.wTree.get_widget( "statusbar" )
-        self.progressbar = self.wTree.get_widget( "progressbar" )
-        self.receivernumber = self.wTree.get_widget( "entry_receiver" )
-        self.affirmation = self.wTree.get_widget( "check_confirmation" )
-        self.cb_main = self.wTree.get_widget( "combo_mainprovider" )
-        self.addressbook = self.wTree.get_widget( "hbox_addressbook" )
-        self.button_addressbook = self.wTree.get_widget( "button_addressbook" )
-        
 
 	#def quit( self, *args ):
 		## Save settings   
@@ -111,11 +67,9 @@ class simpserial:
 		#settings.write( sfile )
 		#sfile.close()
 
-        
         #print "Exit now ..."
         #gtk.main_quit()
-
-
+	
 	#def set_icon( self ):
 		#icon = self.get_icon('simpserial')
 		#self.main_window.set_icon( icon )
